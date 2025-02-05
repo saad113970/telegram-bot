@@ -1,0 +1,10 @@
+from telegram import Update
+from telegram.ext import Updater, CommandHandler, CallbackContext
+
+def start(update: Update, context: CallbackContext) -> None:
+    update.message.reply_text('مرحبًا! أنا بوت.')
+
+updater = Updater("7549813643:AAEq1tinY4QGY2LrcocvJ7pjYKnNo6hsKXY")
+updater.dispatcher.add_handler(CommandHandler("start", start))
+updater.start_polling()
+updater.idle()
